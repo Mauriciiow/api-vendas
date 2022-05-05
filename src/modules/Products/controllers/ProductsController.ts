@@ -17,8 +17,9 @@ class ProductsController {
     public async show(request: Request, response: Response):Promise<Response>{
         const {id} = request.params
         const showProduct = new ShowProductServices()
+  
        
-        const product = showProduct.execute({id})
+        const product = await showProduct.execute({id})
 
         return response.json(product)
     }
@@ -38,7 +39,8 @@ class ProductsController {
       const updateProducte = new UpdateProductService()
 
       const product = await updateProducte.execute({id, name, price, quantity})
-
+        console.log(id);
+        
       return response.json(product)
     }
 
