@@ -39,7 +39,7 @@ class ProductsController {
       const updateProducte = new UpdateProductService()
 
       const product = await updateProducte.execute({id, name, price, quantity})
-        console.log(id);
+     
         
       return response.json(product)
     }
